@@ -1,0 +1,16 @@
+version: "3"
+services:
+  pdf2htmlex:
+    build: .
+    tty: true
+    volumes:
+      - ./workspace:/workspace:cached
+      - ./api:/api:cached
+    ports:
+      - ${PDF2HTML_API_PORT}:8000
+    environment:
+      TZ: "Asia/Tokyo"
+      FLASK_APP: run.py
+      FLASK_CONFIG: development # development or test or production
+      PYTHONPATH: /api/conf:/api/src
+    command: "top"
