@@ -16,7 +16,8 @@ RUN apk --update --no-cache add \
     python3 \
     python3-dev \
     python2 \
-    python2-dev
+    python2-dev \
+    pcre-dev
 
 WORKDIR /workspace
 
